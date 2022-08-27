@@ -1,0 +1,7 @@
+new voter pod created on deleting voter app
+
+new worker pod created on deleting worker app
+
+new db pod created on deleting db app, now result is not updating in the web. Seems, connection is broken either form db to result or worker or db or both.
+
+after restarting result pod, all good (but all the old data seems gone). 1. result app is not created properly. 2. no static data for db while creating the pod.
