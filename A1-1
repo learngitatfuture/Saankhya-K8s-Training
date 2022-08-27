@@ -5,7 +5,7 @@ kubectl get pods
 kubectl delete pod [pod NAME]
 
 Log Snapshots
-
+=====================================================================================
 deployment.apps/db created
 service/db created
 deployment.apps/redis created
@@ -16,7 +16,7 @@ deployment.apps/vote created
 service/vote created
 deployment.apps/worker created
 
-
+=====================================================================================
 NAME                          READY   STATUS             RESTARTS   AGE
 pod/alpine                    0/1     CrashLoopBackOff   320        27h
 pod/db-b54cd94f4-mlxtx        1/1     Running            0          99s
@@ -48,6 +48,18 @@ replicaset.apps/vote-94849dc97      1         1         1       99s
 replicaset.apps/worker-dd46d7584    1         1         1       99s
 
 
+
+=====================================================================================
+NAME                      READY   STATUS              RESTARTS   AGE
+alpine                    0/1     CrashLoopBackOff    587        2d2h
+db-b54cd94f4-mlxtx        1/1     Running             0          23h
+kubia-manual              1/1     Running             0          2d1h
+redis-868d64d78-tccxj     1/1     Running             0          23h
+result-5d57b59f4b-xpdb7   1/1     Running             0          23h
+vote-94849dc97-6d8lf      0/1     ContainerCreating   0          11s
+vote-94849dc97-tvfcc      1/1     Terminating         0          23h
+worker-dd46d7584-dvkvv    1/1     Running             0          23h
+=====================================================================================
 
 
 
