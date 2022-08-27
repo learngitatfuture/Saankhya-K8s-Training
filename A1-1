@@ -4,3 +4,53 @@ kubectl get all
 kubectl get pods
 kubectl delete pod [pod NAME]
 
+Log Snapshots
+
+deployment.apps/db created
+service/db created
+deployment.apps/redis created
+service/redis created
+deployment.apps/result created
+service/result created
+deployment.apps/vote created
+service/vote created
+deployment.apps/worker created
+
+
+NAME                          READY   STATUS             RESTARTS   AGE
+pod/alpine                    0/1     CrashLoopBackOff   320        27h
+pod/db-b54cd94f4-mlxtx        1/1     Running            0          99s
+pod/kubia-manual              1/1     Running            0          26h
+pod/redis-868d64d78-tccxj     1/1     Running            0          99s
+pod/result-5d57b59f4b-xpdb7   1/1     Running            0          99s
+pod/vote-94849dc97-tvfcc      1/1     Running            0          99s
+pod/worker-dd46d7584-dvkvv    1/1     Running            0          99s
+
+NAME                 TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
+service/db           ClusterIP   10.109.74.125   <none>        5432/TCP         99s
+service/kubernetes   ClusterIP   10.96.0.1       <none>        443/TCP          2d1h
+service/redis        ClusterIP   10.109.42.192   <none>        6379/TCP         99s
+service/result       NodePort    10.110.212.6    <none>        5001:31001/TCP   99s
+service/vote         NodePort    10.110.40.109   <none>        5000:31000/TCP   99s
+
+NAME                     READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/db       1/1     1            1           99s
+deployment.apps/redis    1/1     1            1           99s
+deployment.apps/result   1/1     1            1           99s
+deployment.apps/vote     1/1     1            1           99s
+deployment.apps/worker   1/1     1            1           99s
+
+NAME                                DESIRED   CURRENT   READY   AGE
+replicaset.apps/db-b54cd94f4        1         1         1       99s
+replicaset.apps/redis-868d64d78     1         1         1       99s
+replicaset.apps/result-5d57b59f4b   1         1         1       99s
+replicaset.apps/vote-94849dc97      1         1         1       99s
+replicaset.apps/worker-dd46d7584    1         1         1       99s
+
+
+
+
+
+Services can be accessed from:
+http://18.141.161.135:31001/
+http://18.141.161.135:31000/
